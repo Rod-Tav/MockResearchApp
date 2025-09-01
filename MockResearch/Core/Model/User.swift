@@ -7,11 +7,20 @@
 
 import Foundation
 
-struct User {
+struct User: Equatable {
     var firstName: String = ""
     var lastName: String = ""
-    var dob: Date = Date()
+    var dob: Date? = nil
     var email: String = ""
     var phoneNumber: String = ""
     var currentRegion: String = ""
+    
+    func hasNullField() -> Bool {
+        return firstName.isEmpty ||
+        lastName.isEmpty ||
+        dob == nil ||
+        email.isEmpty ||
+        phoneNumber.isEmpty ||
+        currentRegion.isEmpty
+    }
 }
