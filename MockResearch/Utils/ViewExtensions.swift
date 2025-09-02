@@ -12,4 +12,9 @@ extension View {
         self
             .simultaneousGesture(TapGesture().onEnded({ action() }))
     }
+    
+    func frame(_ size: CGFloat) -> some View {
+        self
+            .frame(width: size, height: size)
+    }
 }

@@ -17,7 +17,7 @@ struct ContentView: View {
             }
             
             Tab("Studies", systemImage: "list.clipboard") {
-                
+                StudiesView()
             }
             
             

@@ -10,10 +10,12 @@ import SwiftUI
 struct HealthStudyImage: View {
     @Environment(\.colorScheme) private var colorScheme
     
+    var contentMode: ContentMode = .fit
+    
     var body: some View {
         Image(colorScheme == .dark ? "health-study-dark" : "health-study-light")
             .resizable()
-            .scaledToFit()
+            .aspectRatio(contentMode: contentMode)
     }
 }
 
