@@ -82,20 +82,18 @@ private extension StudiesView {
 
 // MARK: - Open Studies Section
 private extension StudiesView {
-    var openStudiesSection: some View {
-        Group {
-            Section {
-                womensHealthStudyCard
-            } header: {
-                Text("Open Studies")
-                    .font(.title2.bold())
-                    .foregroundStyle(Color.primary)
-                    .textCase(nil)
-            }
-            
-            Section {
-                hearingStudyCard
-            }
+    @ViewBuilder var openStudiesSection: some View {
+        Section {
+            womensHealthStudyCard
+        } header: {
+            Text("Open Studies")
+                .font(.title2.bold())
+                .foregroundStyle(Color.primary)
+                .textCase(nil)
+        }
+        
+        Section {
+            hearingStudyCard
         }
     }
     
