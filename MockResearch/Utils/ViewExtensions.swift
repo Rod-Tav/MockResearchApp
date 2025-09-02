@@ -17,4 +17,14 @@ extension View {
         self
             .frame(width: size, height: size)
     }
+    
+    func frameTop() -> some View {
+        self
+            .frame(maxHeight: .infinity, alignment: .top)
+    }
+    
+    func frameLeading() -> some View {
+        self
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
 }

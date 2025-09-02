@@ -114,7 +114,39 @@ private extension StudiesView {
             caption: "University of Michigan, World Health Organization & Apple"
         )
     }
-    
+}
+
+// MARK: - Previous Studies Section
+private extension StudiesView {
+    @ViewBuilder var previousStudiesSection: some View {
+        Section {
+            previousStudyRow(
+                iconName: "bolt.heart.fill",
+                iconColors: [.orange, .red],
+                title: "Apple Heart & Movement Study",
+                endDate: "3/1/2025"
+            )
+        } header: {
+            Text("Previous Studies")
+                .font(.title2.bold())
+                .foregroundStyle(Color.primary)
+                .textCase(nil)
+        }
+        
+        Section {
+            previousStudyRow(
+                iconName: "heart.text.square.fill",
+                iconColors: [.orange, .pink],
+                title: "Apple Heart Study",
+                endDate: "9/14/2018"
+            )
+        }
+    }
+}
+
+
+// MARK: - Components
+private extension StudiesView {
     /// Generic study card
     func studyCard(
         imageName: String,
@@ -143,34 +175,6 @@ private extension StudiesView {
             .padding(.vertical)
         }
         .listRowInsets(.init())
-    }
-}
-
-// MARK: - Previous Studies Section
-private extension StudiesView {
-    @ViewBuilder var previousStudiesSection: some View {
-        Section {
-            previousStudyRow(
-                iconName: "bolt.heart.fill",
-                iconColors: [.orange, .red],
-                title: "Apple Heart & Movement Study",
-                endDate: "3/1/2025"
-            )
-        } header: {
-            Text("Previous Studies")
-                .font(.title2.bold())
-                .foregroundStyle(Color.primary)
-                .textCase(nil)
-        }
-        
-        Section {
-            previousStudyRow(
-                iconName: "heart.text.square.fill",
-                iconColors: [.orange, .pink],
-                title: "Apple Heart Study",
-                endDate: "9/14/2018"
-            )
-        }
     }
     
     /// Generic previous study row

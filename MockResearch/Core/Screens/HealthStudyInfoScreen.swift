@@ -43,7 +43,7 @@ struct HealthStudyInfoScreen: View {
                             .bold()
                             .foregroundStyle(.secondary)
                             .padding(12)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .frameLeading()
                             .background {
                                 RoundedRectangle(cornerRadius: 8)
                                     .fill(.regularMaterial)
@@ -52,7 +52,7 @@ struct HealthStudyInfoScreen: View {
                 }
                 .padding(.horizontal)
             }
-            .frame(maxHeight: .infinity, alignment: .top)
+            .frameTop()
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Cancel") {

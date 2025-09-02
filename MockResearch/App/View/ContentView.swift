@@ -21,8 +21,8 @@ struct ContentView: View {
             }
             
             
-            Tab("Your Data", systemImage: "chart.bar") {
-                
+            Tab("Your Data", systemImage: "chart.bar.xaxis") {
+                YourDataView()
             }
         }
         .environment(viewModel)

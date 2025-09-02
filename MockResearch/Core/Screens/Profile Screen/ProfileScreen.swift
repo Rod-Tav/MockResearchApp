@@ -35,7 +35,7 @@ struct ProfileScreen: View {
                 profileSection
                 
                 if !isEditing {
-                    legalSection
+                    LegalSection(showResearchAndPrivacySheet: $showResearchAndPrivacySheet)
                     
                     notificationsSection
                     
@@ -153,81 +153,6 @@ private extension ProfileScreen {
         }
     }
 }
-    
-// MARK: - Legal Section
-private extension ProfileScreen {
-    var legalSection: some View {
-        Section {
-            NavigationLink {
-                Text("You are not currently enrolled in any studies that collected consent within this app.")
-                    .padding(.top, 24)
-                    .frame(maxHeight: .infinity, alignment: .top)
-                    .navigationTitle("Consent Documents")
-                    .navigationBarTitleDisplayMode(.inline)
-            } label: {
-                Text("Consent Documents")
-            }
-            
-            NavigationLink {
-                researchEthicsScreen
-            } label: {
-                Text("About Research Ethics")
-            }
-            
-            NavigationLink {
-                Text("Legal Section")
-                    .navigationTitle("Legal")
-                    .navigationBarTitleDisplayMode(.inline)
-            } label: {
-                Text("Legal")
-            }
-            
-            Button("About Research & Privacy") {
-                showResearchAndPrivacySheet = true
-            }
-            .sheet(isPresented: $showResearchAndPrivacySheet) {
-                researchAndPrivacySheet
-            }
-        }
-    }
-    
-    /// About Research Ethics Screen
-    var researchEthicsScreen: some View {
-        VStack(alignment: .leading, spacing: 24) {
-            VStack(alignment: .leading, spacing: 12) {
-                Text("Learn More About Research Ethics Committees.")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                
-                Text("Apple relies on independent research ethics committees to review and approve the studies in the Research app. Research ethics committees, also called institutional review boards (IRB), evaluate research involving people to ensure the study protects the rights, safety, and privacy of the participants. The committee can approve, reject, modify, or monitor any research it reviews.")
-                    .font(.body)
-            }
-            
-            Text("Apple also evaluates the study based on additional privacy and security requirements. If a study is approved by a research ethics committee, Apple, and all the research partners, it can begin.")
-                .font(.body)
-        }
-        .foregroundStyle(Color.primary)
-        .padding(.top, 24)
-        .padding(.horizontal, 24)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .frame(maxHeight: .infinity, alignment: .top)
-    }
-    
-    /// Apple Research App and Privacy Sheet
-    var researchAndPrivacySheet: some View {
-        NavigationStack {
-            Text("Apple Research App & Privacy")
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button("Done") {
-                            showResearchAndPrivacySheet = false
-                        }
-                    }
-                }
-        }
-    }
-}
-    
 // MARK: - Notifications Section
 private extension ProfileScreen {
     var notificationsSection: some View {
