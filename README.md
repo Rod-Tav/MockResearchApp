@@ -1,6 +1,6 @@
 # Mock Research App
 
-This is a mockup of Apple's Research app, entirely using native SwiftUI.
+This is a mockup of Apple's Research app, made entirely using native SwiftUI.
 
 ## Screenshots
 
